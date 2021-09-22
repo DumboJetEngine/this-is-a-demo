@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KELPortableFileServer.Server", "KEL Portable File Server\Server\KELPortableFileServer.Server.csproj", "{4483F546-4028-4F33-9E91-62251E2AAF46}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KELPortableFileServer.Client", "KEL Portable File Server\Client\KELPortableFileServer.Client.csproj", "{2EFF9D0B-8B66-4760-895A-407643F1917B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KELPortableFileServer.Shared", "KEL Portable File Server\Shared\KELPortableFileServer.Shared.csproj", "{91C5EE7C-77CD-4161-854E-55DECB77B9D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4483F546-4028-4F33-9E91-62251E2AAF46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4483F546-4028-4F33-9E91-62251E2AAF46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4483F546-4028-4F33-9E91-62251E2AAF46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4483F546-4028-4F33-9E91-62251E2AAF46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EFF9D0B-8B66-4760-895A-407643F1917B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EFF9D0B-8B66-4760-895A-407643F1917B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EFF9D0B-8B66-4760-895A-407643F1917B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EFF9D0B-8B66-4760-895A-407643F1917B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91C5EE7C-77CD-4161-854E-55DECB77B9D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91C5EE7C-77CD-4161-854E-55DECB77B9D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91C5EE7C-77CD-4161-854E-55DECB77B9D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91C5EE7C-77CD-4161-854E-55DECB77B9D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BE3C620C-90EE-4831-89B5-BB489E06F9C5}
+	EndGlobalSection
+EndGlobal

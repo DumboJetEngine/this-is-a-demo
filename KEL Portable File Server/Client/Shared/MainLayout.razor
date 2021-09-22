@@ -1,0 +1,157 @@
+﻿@inherits LayoutComponentBase
+@inject SettingsService settingsService
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <div class="main">
+        <div class="top-row px-4 auth">
+            <LoginDisplay />
+        </div>
+
+        <div class="content px-4 @(Theme.CssClass)">
+            @Body
+        </div>
+    </div>
+</div>
+
+<style>
+
+    .centered-content-container {
+        margin: auto;
+        padding: 20px 10px;
+        text-align: center;
+    }
+
+    .centered-content {
+        margin: auto;
+    }
+
+
+    .k-table .oi {
+        cursor: pointer;
+    }
+
+        .k-table .oi.oi-folder {
+            color: @(Theme.FolderIconColor);
+        }
+
+        .k-table .oi.oi-document {
+            color: @(Theme.DocumentIconColor);
+        }
+
+    .k-table .k-table-row:hover {
+        background-color: @(Theme.EntryHoverColor);
+    }
+
+    .k-table .cell-size {
+        white-space: nowrap;
+    }
+
+    .k-table .selected-row {
+        background-color: @(Theme.HighlightColor);
+    }
+
+    .k-table-cell-tiny {
+        max-width: 0px;
+        min-width: 28px;
+    }
+
+
+    @@media (min-width: 990px) {
+        .k-table {
+            display: table;
+            width: 100%;
+        }
+
+        .k-table-row {
+            display: table-row;
+        }
+
+        .k-table-cell {
+            display: table-cell;
+        }
+
+        .k-table-cell {
+            padding: 4px 7px;
+            border: 1px solid #efefef;
+        }
+
+        .k-table-header {
+            font-weight: bold;
+            background-color: @(Theme.TableHeaderColor);
+        }
+
+        .k-table-cell-label {
+            display: none;
+        }
+    }
+
+    @@media (max-width: 990px) {
+        .k-table {
+            display: block;
+        }
+
+        .k-table-row {
+            display: block;
+        }
+
+        .k-table-cell {
+            display: block;
+        }
+
+        .k-table-row {
+            padding: 4px 7px;
+            border: 1px solid #efefef;
+        }
+
+        .k-table-header {
+            display: none;
+        }
+
+        .k-table-cell-label {
+            display: inline;
+            color: @(Theme.LabelColor);
+        }
+
+        .k-table-row .k-table-cell:nth-child(2) .k-table-cell-label {
+            display: none;
+        }
+
+        .k-table-row .k-table-cell:nth-child(2) {
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        .k-table-row .k-table-cell:not(:nth-child(2)) {
+            font-size: 12px;
+        }
+    }
+
+    .content a,
+    .content a:hover {
+        color: @(Theme.LinkColor);
+    }
+
+    body,
+    .content,
+    .main,
+    .modal-content {
+        color: @(Theme.ForegroundColor);
+        background-color: @(Theme.BackgroundColor);
+    }
+</style>
+
+@code{
+
+    protected SettingsService.Theme Theme => settingsService.Themes.FirstOrDefault(x => x.Key == settingsService.ThemeId).Value;
+
+    protected override Task OnInitializedAsync()
+    {
+        settingsService.OnStateChanged += (s, e) => this.StateHasChanged();
+        return Task.CompletedTask;
+    }
+
+}

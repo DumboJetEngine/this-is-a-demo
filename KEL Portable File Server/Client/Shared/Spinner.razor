@@ -1,0 +1,26 @@
+﻿@if (IsVisible)
+{
+    <i class="spinner-border" @attributes="_attributes"></i>
+}
+
+@code {
+
+    [Parameter]
+    public bool IsVisible { get; set; }
+
+    [Parameter]
+    public uint? SizeInPx { get; set; }
+
+    Dictionary<string, object> _attributes;
+
+    protected override Task OnInitializedAsync()
+    {
+        _attributes = new Dictionary<string, object>(1);
+        if (SizeInPx.HasValue)
+        {
+            _attributes.Add("style", $"font-size:{SizeInPx}px");
+        }
+        return base.OnInitializedAsync();
+    }
+
+}
